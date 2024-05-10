@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DebtApp.Pages.Display_Users"
+             Title="عرض العملاء"
+             FlowDirection="RightToLeft">
+    <ScrollView>
+        
+    <ListView  x:Name="mylist" HasUnevenRows="True" ItemSelected="mylist_ItemSelected">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                        <VerticalStackLayout>
+                            <HorizontalStackLayout >
+                                <Label Text="أسم العميل : " FontSize="Medium" Margin="0,0,5,0"/>
+                                <Label  Text="{Binding CustomerName}"  FontSize="Large" FontAttributes="Bold" />
+                            </HorizontalStackLayout>
+                            <HorizontalStackLayout>
+                            <Label Text="رقم هاتف العميل: " FontSize="Medium" Margin="0,0,5,0"/>
+                                <Label Text="{Binding CustomerPhone}" FontSize="Small"/>
+                            </HorizontalStackLayout>
+                            <HorizontalStackLayout>
+                                <Label  Text="عنوان العميل:" FontSize="Small" Margin="0,0,5,0" />
+                                <Label  Text="{Binding CustomerAddress}" FontSize="Small" Margin="0,0,5,0"/>
+                            </HorizontalStackLayout>
+                            <HorizontalStackLayout>
+                                <Label  Text="اجمالي الدين الذي عليه بالريال اليمني :" FontSize="Small" Margin="0,0,5,0"/>
+                                <Label  Text="{Binding TotalDebtInYER}" FontSize="Small" />
+                           
+
+                            </HorizontalStackLayout>
+                            <HorizontalStackLayout>
+                                <Label  Text="اجمالي الدين الذي عليه بالريال السعودي :" FontSize="Small" Margin="0,0,5,0"/>
+                                <Label  Text="{Binding TotalDebtInSAR}" FontSize="Small" />
+
+
+                            </HorizontalStackLayout>
+                            <HorizontalStackLayout>
+                                <Label  Text="اجمالي الدين الذي عليه بالدولارالامريكي:" FontSize="Small" Margin="0,0,5,0"/>
+                                <Label  Text="{Binding TotalDebtInUSD}" FontSize="Small" />
+
+
+                            </HorizontalStackLayout>
+                        </VerticalStackLayout>
+                          
+
+
+                    </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    
+    </ListView>
+    </ScrollView>
+</ContentPage>

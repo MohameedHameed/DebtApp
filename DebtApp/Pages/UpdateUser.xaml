@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:urinum="http://schemas.enisn-projects.io/dotnet/maui/uraniumui"
+              xmlns:matrial="http://schemas.enisn-projects.io/dotnet/maui/uraniumui/material"
+              xmlns:AddUserViewModel="clr-namespace:DebtApp.ViewModel" 
+             x:Class="DebtApp.Pages.UpdateUser"
+             Title="UpdateUser"
+             FlowDirection="RightToLeft">
+    <ContentPage.BindingContext>
+        <AddUserViewModel:AddUserViewModel/>
+    </ContentPage.BindingContext>
+    <VerticalStackLayout Spacing="10" Margin="10" VerticalOptions="Center">
+        <matrial:TextField Title="اسم العميل"  x:Name="CustomerName" Text="{Binding CustomerName}"/>
+        <matrial:TextField Title="رقم العميل"  x:Name="CustomerPhone" Text="{Binding CustomerPhone}" Keyboard="Telephone"/>
+        <matrial:TextField Title="عنوان العميل"  x:Name="CustomerAddress" Text="{Binding CustomerAddress}"/>
+        <Button Text="تعديل" x:Name="BtUpdate" Clicked="BtUpdate_Clicked" CornerRadius="20" HorizontalOptions="End" WidthRequest="100" />
+        <Button Text="حذف" x:Name="BtUDelete" Clicked="BtUDelete_Clicked" CornerRadius="20" HorizontalOptions="Start" WidthRequest="100" />
+    </VerticalStackLayout>
+</ContentPage>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DebtApp.Pages.AddDeptprocess"
+             xmlns:urinum="http://schemas.enisn-projects.io/dotnet/maui/uraniumui"
+             xmlns:matrial="http://schemas.enisn-projects.io/dotnet/maui/uraniumui/material"
+             xmlns:AddDebtProcessViewModel="clr-namespace:DebtApp.ViewModel"
+             Title="اضافة عملية دين"
+              FlowDirection="RightToLeft"
+             xmlns:local="clr-namespace:DebtApp">
+    <ContentPage.BindingContext>
+        <AddDebtProcessViewModel:AddDebtProcessViewModel/>
+    </ContentPage.BindingContext>
+    <VerticalStackLayout Spacing="10" Margin="10" VerticalOptions="Center">
+        <Label Text="اضافة عملية دين جديدة " FontSize="Large" HorizontalOptions="Center" FontAttributes="Bold"/>
+        <Picker Title="اختار اسم العميل"  ItemsSource="{Binding Customers}" ItemDisplayBinding="{Binding CustomerName}" x:Name="PikerCuctomer" />
+        <Picker Title="اختار اسم العملة"  ItemsSource="{Binding Currencyes}" ItemDisplayBinding="{Binding CurrencyName}" x:Name="PickerCurrency"  />
+        <matrial:TextField Title="المبلغ" x:Name="the_amounnt" Keyboard="Numeric"/>
+
+        <HorizontalStackLayout>
+            <Button Text="حفظ"   CornerRadius="20" HorizontalOptions="EndAndExpand" WidthRequest="100" Margin="0,0,150,0" x:Name="BtnSave" Clicked="BtnSave_Clicked"/>
+        <Button Text="إالغاء"  CornerRadius="20" HorizontalOptions="Start" WidthRequest="100" Clicked="BtnCancel_Clicked" x:Name="BtnCancel" />
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>

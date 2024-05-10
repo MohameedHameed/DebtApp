@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:uranium="http://schemas.enisn-projects.io/dotnet/maui/uraniumui"
+             xmlns:matril="http://schemas.enisn-projects.io/dotnet/maui/uraniumui/material"
+             x:Class="DebtApp.Pages.UserPage"
+             Title="الخيارات"
+               FlowDirection="RightToLeft">
+    <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center">
+    <uranium:GridLayout Margin="20"
+        RowCount="2"
+        ColumnCount="2" 
+        ColumnSpacing="16" 
+        RowSpacing="16"
+        ColumnGridLength="120"
+        RowGridLength="120">
+            <matril:ButtonView>
+                <matril:ButtonView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_2"/>
+                </matril:ButtonView.GestureRecognizers>
+                <VerticalStackLayout Spacing="20">
+                    <Image Source="icons8_debt_32.png" HorizontalOptions="Center"/>
+                    <Label Text="أضافة عملية دين" HorizontalTextAlignment="Center" TextColor="White"/>
+                </VerticalStackLayout>
+            </matril:ButtonView>
+            <matril:ButtonView>
+                <matril:ButtonView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1"/>
+                </matril:ButtonView.GestureRecognizers>
+
+                    <VerticalStackLayout Spacing="20">
+                    <Image Source="icons8_user_group_32.png" HorizontalOptions="Center"/>
+                    <Label Text="عرض المستخدمين" HorizontalTextAlignment="Center"  TextColor="White"/>
+                </VerticalStackLayout>
+            </matril:ButtonView>
+            <matril:ButtonView>
+                <matril:ButtonView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_3"/>
+                </matril:ButtonView.GestureRecognizers>
+                <VerticalStackLayout Spacing="20">
+                    <Image Source="icons8_debt_32.png"  HorizontalOptions="Center"/>
+                    <Label Text="أضافة عملية سداد للدين" HorizontalTextAlignment="Center"  TextColor="White"/>
+                </VerticalStackLayout>
+            </matril:ButtonView>
+            <matril:ButtonView >
+                <matril:ButtonView.GestureRecognizers >
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"
+                          />
+                </matril:ButtonView.GestureRecognizers>
+
+                    <VerticalStackLayout Spacing="20">
+                    <Image Source="icons8_add_user_male_32.png"  HorizontalOptions="Center"/>
+                    <Label Text="أضافة مستخدم" HorizontalTextAlignment="Center"  TextColor="White"/>
+                </VerticalStackLayout>
+            </matril:ButtonView>
+        </uranium:GridLayout>
+    </VerticalStackLayout>
+</ContentPage>

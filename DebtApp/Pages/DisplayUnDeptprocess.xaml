@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DebtApp.Pages.DisplayUnDeptprocess"
+             FlowDirection="RightToLeft"
+             Title="عرض عمليات سداد الدين">
+    <ScrollView>
+        <ListView x:Name="mylist" HasUnevenRows="True" ItemSelected="mylist_ItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <HorizontalStackLayout>
+
+                            <StackLayout Orientation="Vertical">
+                                <HorizontalStackLayout>
+                                    <Label Text="اسم العميل " FontSize="Medium" FontAttributes="Bold"/>
+                                    <Label Text="{Binding CustomerName}" FontSize="Large" />
+                                </HorizontalStackLayout>
+                                <HorizontalStackLayout>
+                                    <Label Text="المبلغ" FontSize="Medium" FontAttributes="Bold" Margin="0,0,5,0"/>
+                                    <Label Text="{Binding Amount}" FontSize="Medium"/>
+                                    <Label Text="{Binding CurrencyName}" FontSize="Medium" />
+                                </HorizontalStackLayout>
+                                <HorizontalStackLayout>
+                                    <Label Text="التاريخ" FontSize="Medium" FontAttributes="Bold" Margin="0,0,5,0"/>
+                                    <Label Text="{Binding DateofDebt}" FontSize="Medium"/>
+                                </HorizontalStackLayout>
+                            </StackLayout>
+                            <Image Source="icons8_up_arrow_32.png" HorizontalOptions="End"/>
+
+                        </HorizontalStackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+
+    </ScrollView>
+</ContentPage>
